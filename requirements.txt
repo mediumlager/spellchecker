@@ -1,0 +1,3 @@
+textblob
+PyPDF2
+getch
