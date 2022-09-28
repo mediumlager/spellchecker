@@ -19,7 +19,6 @@ def read_file(filename):
         print('File does not exist')
 
 def check_spelling(line):
-    print(line)
     accepted_answers = ['Y','n','new']
     #words = [word.lower() for word in line]
     words = [word for word in line]
