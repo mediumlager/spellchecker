@@ -55,13 +55,11 @@ lines = read_file(str(arguments[1]))
 if lines is not None:
     for i in range(len(lines)):
         lines[i] = check_spelling(lines[i])
-        print(lines[i])
 
 # In this case replace the correct spelling
 if int(arguments[2]) == 1:
     f = open(arguments[1],'w')
     for line in lines:
-        print('Line is: ',line)
         f.write(' '.join(line))
         f.write('\n')
     f.close()
