@@ -35,7 +35,7 @@ def read_file(filename):
 
 def check_spelling(line, type):
     accepted_answers = ['Y','n','new']
-    #words = [word.lower() for word in line]
+    words = [word.lower() for word in line]
     words = [word for word in line]
     # remove punctuation
     words = [re.sub(r'[^\w\s]','',word) for word in words]
@@ -44,8 +44,10 @@ def check_spelling(line, type):
         # Check spelling
         correct = Word(words[i]).spellcheck()
         if words[i] != correct[0][0]:
-            print('Word: ',words[i],', is probably incorrect,')
-            print('Confidence: ',correct[0][1],' \nCorrect spelling: ',correct[0][0])
+            print('Word:    >',words[i],'<   is probably incorrect,')
+            print('         Correct spelling: ',correct[0][0])
+            print('         Confidence: ',correct[0][1])
+
             if type == '.txt':
                 # Ask user if they want to change the word
                 while answer not in accepted_answers:
@@ -61,7 +63,7 @@ def check_spelling(line, type):
                     elif answer == 'n':
                         continue
             elif type == '.pdf':
-                getch.pause('Press the anykey to continue.')
+                getch.pause('   Press the anykey to continue.')
     return words
 
 
